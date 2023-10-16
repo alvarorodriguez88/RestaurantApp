@@ -9,4 +9,8 @@ public class Phone {
     public void isValid(){
         // ni idea
     }
+
+    public String getNumber() {
+        return number;
+    }
 }

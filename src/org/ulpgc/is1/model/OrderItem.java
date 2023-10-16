@@ -8,4 +8,11 @@ public class OrderItem {
         this.dish = dish;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Dish getDish() {
+        return dish;
+    }
 }

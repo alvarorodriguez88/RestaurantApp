@@ -14,4 +14,12 @@ public class Menu {
     public void addDish(Dish dish){
         dishArrayList.add(dish);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Dish> getDishArrayList() {
+        return dishArrayList;
+    }
 }

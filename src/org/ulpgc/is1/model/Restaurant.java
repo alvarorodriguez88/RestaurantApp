@@ -16,4 +16,16 @@ public class Restaurant {
         Menu menu = new Menu(name);
         menuList.add(menu);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public List<Menu> getMenuList() {
+        return menuList;
+    }
 }

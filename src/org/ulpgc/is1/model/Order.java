@@ -23,4 +23,27 @@ public class Order {
     public void removeItem(int id){
         orderItemArrayList.remove(id);
     }
+
+    public int getNEXT_ID() {
+        return NEXT_ID;
+    }
+
+    public void setNEXT_ID(int NEXT_ID) {
+        this.NEXT_ID = NEXT_ID;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    //No sé si hacer el setter y el getter del ArrayList
+    /*public ArrayList<OrderItem> getOrderItemArrayList() {
+        return orderItemArrayList;
+    }
+
+    public void setOrderItemArrayList(ArrayList<OrderItem> orderItemArrayList) {
+        this.orderItemArrayList = orderItemArrayList;
+    }
+
+     */
 }

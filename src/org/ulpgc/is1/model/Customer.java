@@ -7,11 +7,38 @@ public class Customer {
     public String name;
     public String surname;
     public Address address;
-    public List<Order> orderList = new ArrayList<>();
+    public ArrayList<Order> orderList;
 
     public Customer(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
 
+    public String getName() {
+        return name;
+    }
+    //Son inútiles los setter de name y surname pero en el trabajo pone que los pongamos, ahora miramos si los dejamos o no.
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public ArrayList<Order> getOrderList() {
+        return orderList;
+    }
 }
