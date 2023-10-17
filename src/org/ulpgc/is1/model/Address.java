@@ -5,6 +5,7 @@ public class Address {
     public int number;
     public int postalCode;
     public String city;
+    public Customer customer;
 
     public Address(String street, int number, int postalCode, String city) {
         this.street = street;
@@ -43,5 +44,13 @@ public class Address {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

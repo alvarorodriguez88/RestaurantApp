@@ -8,10 +8,10 @@ public class Customer {
     public String surname;
     public Address address;
     public ArrayList<Order> orderList;
-
-    public Customer(String name, String surname) {
+    public Customer(String name, String surname, Address address) {
         this.name = name;
         this.surname = surname;
+        this.address = address;
     }
 
     public String getName() {
@@ -34,12 +34,18 @@ public class Customer {
         return address;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddress(String street, int number, int postalCode, String city) {
+        this.address = new Address(street, number, postalCode, city);
     }
 
-    public ArrayList<Order> getOrderList() {
+    public ArrayList<Order> getCustomerOrderList() {
         return orderList;
+    }
+    public void addCustomerOrder(Order order){
+        orderList.add(order);
+    }
+    public void removeCustomerOrder(int index){
+        orderList.remove(index);
     }
 
 }

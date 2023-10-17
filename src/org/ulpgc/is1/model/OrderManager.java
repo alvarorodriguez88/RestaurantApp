@@ -1,13 +1,21 @@
 package org.ulpgc.is1.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OrderManager {
-    public ArrayList<Customer> customerList;
-    public ArrayList<Restaurant> restaurantList;
-    public ArrayList<Dish> dishList;
-    public void addCustomer(String name, String surname){
-        Customer customer = new Customer(name, surname);
+    public List<Customer> customerList;
+    public List<Restaurant> restaurantList;
+    public List<Dish> dishList;
+
+    public OrderManager() {
+        customerList = new ArrayList<>();
+        restaurantList = new ArrayList<>();
+        dishList = new ArrayList<>();
+    }
+
+    public void addCustomer(String name, String surname, Address address){
+        Customer customer = new Customer(name, surname, address);
         customerList.add(customer);
     }
     public void addRestaurant(String name, Phone phone){
@@ -18,8 +26,6 @@ public class OrderManager {
         Dish dish = new Dish(name, description, price);
         dishList.add(dish);
     }
-    //No sé si será el getCustomer con un indice, creo que si
-    //Le puse que devuelva la frase esa con el nombre y el apellido.
     public void getCustomer(int index){
         Customer customer = customerList.get(index);
         System.out.println("El cliente es " + customer.getName() + " " + customer.getSurname());
@@ -31,5 +37,8 @@ public class OrderManager {
     public void getDish(int index){
         Dish dish = dishList.get(index);
         System.out.println("El plato es un/a " + dish.getName());
+    }
+    public void order(){
+
     }
 }

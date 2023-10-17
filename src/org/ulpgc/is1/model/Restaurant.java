@@ -7,14 +7,14 @@ public class Restaurant {
     public String name;
     public Phone phone;
     public List<Menu> menuList = new ArrayList<>();
-    public ArrayList<Order> orders;
+    public List<Order> orders = new ArrayList<>();
 
     public Restaurant(String name, Phone phone) {
         this.name = name;
         this.phone = phone;
     }
-    public void addMenu(String name){
-        Menu menu = new Menu(name);
+    public void addMenu(String name, MenuType menuType){
+        Menu menu = new Menu(name, menuType);
         menuList.add(menu);
     }
 
@@ -28,5 +28,27 @@ public class Restaurant {
 
     public List<Menu> getMenuList() {
         return menuList;
+    }
+    public void addRestaurantOrder(Order order){
+        orders.add(order);
+    }
+    public void removeRestaurantOrder(int index){
+        orders.remove(index);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = new Phone(phone);
+    }
+
+    public void setMenuList(List<Menu> menuList) {
+        this.menuList = menuList;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }
