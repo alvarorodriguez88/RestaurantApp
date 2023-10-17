@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class Order {
     private int NEXT_ID = 0;
     public final int id;
-    public ArrayList<OrderItem> orderItemArrayList;
+    public ArrayList<OrderItem> orders;
+    public Restaurant restaurant;
 
-    public Order(int NEXT_ID, int id) {
+    public Order(int NEXT_ID, int id, Restaurant restaurant) {
         this.NEXT_ID = NEXT_ID;
         this.id = id;
+        this.restaurant = restaurant;
     }
     //No sé si es así el método price();
     public int price(Dish dish){
@@ -18,10 +20,10 @@ public class Order {
     //Creo que está bien porque lo hice como en la página 62
     public void addItem(int amount, Dish d){
         OrderItem it = new OrderItem(amount, d);
-        orderItemArrayList.add(it);
+        orders.add(it);
     }
     public void removeItem(int id){
-        orderItemArrayList.remove(id);
+        orders.remove(id);
     }
 
     public int getNEXT_ID() {

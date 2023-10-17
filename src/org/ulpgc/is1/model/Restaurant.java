@@ -7,6 +7,7 @@ public class Restaurant {
     public String name;
     public Phone phone;
     public List<Menu> menuList = new ArrayList<>();
+    public ArrayList<Order> orders;
 
     public Restaurant(String name, Phone phone) {
         this.name = name;

@@ -21,4 +21,16 @@ public class Dish {
     public int getPrice() {
         return price;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }
