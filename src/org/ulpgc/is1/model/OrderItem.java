@@ -4,10 +4,9 @@ public class OrderItem {
     public int quantity;
     public Dish dish;
     public Order order;
-    public OrderItem(int quantity, Dish dish, Order order) {
+    public OrderItem(int quantity, Dish dish) {
         this.quantity = quantity;
         this.dish = dish;
-        this.order = order;
     }
 
     public int getQuantity() {

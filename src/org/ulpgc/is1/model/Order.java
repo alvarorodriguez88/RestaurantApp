@@ -1,23 +1,22 @@
 package org.ulpgc.is1.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
-    private int NEXT_ID = 0;
+    private static int NEXT_ID = 0;
     public final int id;
     public ArrayList<OrderItem> orders;
     public Restaurant restaurant;
 
-    public Order(int NEXT_ID, int id, Restaurant restaurant) {
-        this.NEXT_ID = NEXT_ID;
-        this.id = id;
+    public Order(int id, Restaurant restaurant) {
+        this.id = NEXT_ID++;
         this.restaurant = restaurant;
+        orders = new ArrayList<>();
     }
-    //No sé si es así el método price();
     public int price(Dish dish){
         return dish.price;
     }
-    //Creo que está bien porque lo hice como en la página 62
     public void addItem(int amount, Dish d){
         OrderItem it = new OrderItem(amount, d);
         orders.add(it);
@@ -38,14 +37,8 @@ public class Order {
         return id;
     }
 
-    //No sé si hacer el setter y el getter del ArrayList
-    /*public ArrayList<OrderItem> getOrderItemArrayList() {
-        return orderItemArrayList;
-    }
 
-    public void setOrderItemArrayList(ArrayList<OrderItem> orderItemArrayList) {
-        this.orderItemArrayList = orderItemArrayList;
+    public ArrayList<OrderItem> getOrderItemArrayList() {
+        return orders;
     }
-
-     */
 }

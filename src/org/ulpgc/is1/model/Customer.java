@@ -17,7 +17,7 @@ public class Customer {
     public String getName() {
         return name;
     }
-    //Son inútiles los setter de name y surname pero en el trabajo pone que los pongamos, ahora miramos si los dejamos o no.
+
     public void setName(String name) {
         this.name = name;
     }
@@ -41,4 +41,5 @@ public class Customer {
     public ArrayList<Order> getOrderList() {
         return orderList;
     }
+
 }
