@@ -35,8 +35,10 @@ public class OrderManager {
         Dish dish = dishList.get(index);
         System.out.println("El plato es un/a " + dish.getName() + " y su precio es de " + dish.getPrice() + " euros.");
     }
-    public void order(){
-
+    public void order(Customer customer, Restaurant restaurant, ArrayList<Integer> dishesId, ArrayList<Integer> quantity){
+        addCustomer(customer);
+        addRestaurant(restaurant);
+        //getDish(dishesId.get());
     }
     public void removeCustomer(int index){
         customerList.remove(index);

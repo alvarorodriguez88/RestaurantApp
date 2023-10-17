@@ -11,8 +11,8 @@ public class Order {
         this.id = NEXT_ID++;
         orderItems = new ArrayList<>();
     }
-    public int price(Dish dish){
-        return dish.price;
+    public int price(Dish dish, OrderItem orderItem){
+        return dish.price * orderItem.getQuantity();
     }
     public void addItem(int amount, Dish d){
         OrderItem it = new OrderItem(amount, d);
