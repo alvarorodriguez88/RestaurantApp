@@ -22,8 +22,8 @@ public class Restaurant {
         return name;
     }
 
-    public Phone getPhone() {
-        return phone;
+    public String getPhone() {
+        return phone.number;
     }
 
     public List<Menu> getMenuList() {

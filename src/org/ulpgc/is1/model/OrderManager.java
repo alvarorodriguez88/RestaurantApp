@@ -14,16 +14,13 @@ public class OrderManager {
         dishList = new ArrayList<>();
     }
 
-    public void addCustomer(String name, String surname){
-        Customer customer = new Customer(name, surname);
+    public void addCustomer(Customer customer){
         customerList.add(customer);
     }
-    public void addRestaurant(String name, Phone phone){
-        Restaurant restaurant = new Restaurant(name, phone);
+    public void addRestaurant(Restaurant restaurant){
         restaurantList.add(restaurant);
     }
-    public void addDish(String name, String description, int price){
-        Dish dish = new Dish(name, description, price);
+    public void addDish(Dish dish){
         dishList.add(dish);
     }
     public void getCustomer(int index){
@@ -32,13 +29,25 @@ public class OrderManager {
     }
     public void getRestaurant(int index){
         Restaurant restaurant = restaurantList.get(index);
-        System.out.println("El restaurante es " + restaurant.getName());
+        System.out.println("El restaurante es " + restaurant.getName() + " y su teléfono es " + restaurant.getPhone());
     }
     public void getDish(int index){
         Dish dish = dishList.get(index);
-        System.out.println("El plato es un/a " + dish.getName());
+        System.out.println("El plato es un/a " + dish.getName() + " y su precio es de " + dish.getPrice() + " euros.");
     }
     public void order(){
 
+    }
+    public void removeCustomer(int index){
+        customerList.remove(index);
+    }
+    public void customersCount(){
+        System.out.println(customerList.size());
+    }
+    public void dishesCount(){
+        System.out.println(dishList.size());
+    }
+    public void restaurantsCount(){
+        System.out.println(restaurantList.size());
     }
 }
