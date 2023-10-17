@@ -14,8 +14,8 @@ public class OrderManager {
         dishList = new ArrayList<>();
     }
 
-    public void addCustomer(String name, String surname, Address address){
-        Customer customer = new Customer(name, surname, address);
+    public void addCustomer(String name, String surname){
+        Customer customer = new Customer(name, surname);
         customerList.add(customer);
     }
     public void addRestaurant(String name, Phone phone){

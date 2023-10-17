@@ -8,10 +8,9 @@ public class Customer {
     public String surname;
     public Address address;
     public ArrayList<Order> orderList;
-    public Customer(String name, String surname, Address address) {
+    public Customer(String name, String surname) {
         this.name = name;
         this.surname = surname;
-        this.address = address;
     }
 
     public String getName() {
