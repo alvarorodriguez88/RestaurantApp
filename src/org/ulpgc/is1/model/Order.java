@@ -41,7 +41,7 @@ public class Order {
     public ArrayList<String> getOrderItemArrayList() {
         ArrayList<String> orderItemList = new ArrayList<>();
         for (OrderItem item : orderItems){
-            String orderItemString = item.getDishName() + " -> " + item.getQuantity() + " pieza/s.";
+            String orderItemString = item.getDishName() + " -> " + item.getQuantity() + " pieza/s";
             orderItemList.add(orderItemString);
         }
         return orderItemList;
