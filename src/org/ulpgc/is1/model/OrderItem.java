@@ -13,7 +13,7 @@ public class OrderItem {
         return quantity;
     }
 
-    public Dish getDish() {
-        return dish;
+    public String getDishName() {
+        return dish.getName();
     }
 }

@@ -11,11 +11,18 @@ import org.ulpgc.is1.model.OrderManager;
 import org.ulpgc.is1.model.Phone;
 import org.ulpgc.is1.model.Restaurant;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
     public static void init(OrderManager restaurant){
         //i
-        Customer customer1 = new Customer("Álvaro", "Rodríguez");
-        Customer customer2 = new Customer("Jose", "Mataix");
+        Address address1 = new Address("Triana", 2, 35300, "Las Palmas");
+        Address address2 = new Address("La Retama", 1, 35330, "Las Palmas");
+
+        Customer customer1 = new Customer("Álvaro", "Rodríguez", address1);
+        Customer customer2 = new Customer("Jose", "Mataix", address2);
         //ii
         Phone phone1 = new Phone("123456890");
         Phone phone2 = new Phone("928789875");
@@ -37,23 +44,32 @@ public class Main {
         restaurant.addRestaurant(restaurant2);
         restaurant.addDish(dish2);
 
-        restaurant.addDish(dish2);
+        restaurant.addDish(dish3);
     }
 
     public static void main(String[] args) {
         OrderManager orderManager = new OrderManager();
         init(orderManager);
         //iv
-        orderManager.getRestaurant(0);
+        Restaurant restaurant1 = orderManager.getRestaurant(0);
+        System.out.println("El primer restaurante es " + restaurant1.getName() + " y su número de teléfono es " + restaurant1.getPhone());
         //v
-        orderManager.getCustomer(1);
+        Customer customer2 = orderManager.getCustomer(1);
+        System.out.println("El segundo cliente es " + customer2.getName() + " " + customer2.getSurname() + " y su dirección es la calle " + customer2.getAddress().getStreet() + " nº " + customer2.getAddress().getNumber() + " con código postal " + customer2.getAddress().getPostalCode() + " ubicado en " + customer2.getAddress().getCity());
         //vi
-        orderManager.getDish(2);
+        Dish dish3 = orderManager.getDish(2);
+        System.out.println("El tercer plato es " + dish3.getName() + " que es " + dish3.getDescription() + ", y su precio total son " + dish3.getPrice() + " euros.");
         //vii
+        ArrayList<Integer> plates = new ArrayList<>(Arrays.asList(1, 2));
+        ArrayList<Integer> quantities = new ArrayList<>(Arrays.asList(2, 2));
+
+        orderManager.order(orderManager.getCustomer(0), orderManager.getRestaurant(0), plates, quantities);
         //viii
         orderManager.removeCustomer(1);
         //ix
-        orderManager.customersCount();
+        System.out.println("Número de clientes: " + orderManager.customersCount());
         //x
+        String listOfNames = orderManager.getOrder(0).getOrderItemArrayList();
+        System.out.println(listOfNames);
     }
 }

@@ -7,11 +7,13 @@ public class OrderManager {
     public List<Customer> customerList;
     public List<Restaurant> restaurantList;
     public List<Dish> dishList;
+    public List<Order> orderList;
 
     public OrderManager() {
         customerList = new ArrayList<>();
         restaurantList = new ArrayList<>();
         dishList = new ArrayList<>();
+        orderList = new ArrayList<>();
     }
 
     public void addCustomer(Customer customer){
@@ -23,33 +25,37 @@ public class OrderManager {
     public void addDish(Dish dish){
         dishList.add(dish);
     }
-    public void getCustomer(int index){
-        Customer customer = customerList.get(index);
-        System.out.println("El cliente es " + customer.getName() + " " + customer.getSurname());
+    public void addOrder(Order order){ orderList.add(order);}
+    public Customer getCustomer(int index){
+        return customerList.get(index);
     }
-    public void getRestaurant(int index){
-        Restaurant restaurant = restaurantList.get(index);
-        System.out.println("El restaurante es " + restaurant.getName() + " y su teléfono es " + restaurant.getPhone());
+    public Restaurant getRestaurant(int index){
+        return restaurantList.get(index);
     }
-    public void getDish(int index){
-        Dish dish = dishList.get(index);
-        System.out.println("El plato es un/a " + dish.getName() + " y su precio es de " + dish.getPrice() + " euros.");
+    public Dish getDish(int index){
+        return dishList.get(index);
+    }
+    public Order getOrder(int index){
+        return orderList.get(index);
     }
     public void order(Customer customer, Restaurant restaurant, ArrayList<Integer> dishesId, ArrayList<Integer> quantity){
-        addCustomer(customer);
-        addRestaurant(restaurant);
-        //getDish(dishesId.get());
+        Order order = new Order(customer, restaurant);
+        for (Integer i : dishesId){
+            Dish dish = dishList.get(i);
+            order.addItem(quantity.indexOf(i), dish);
+        }
+        addOrder(order);
     }
     public void removeCustomer(int index){
         customerList.remove(index);
     }
-    public void customersCount(){
-        System.out.println(customerList.size());
+    public int customersCount(){
+        return customerList.size();
     }
-    public void dishesCount(){
-        System.out.println(dishList.size());
+    public int dishesCount(){
+        return dishList.size();
     }
-    public void restaurantsCount(){
-        System.out.println(restaurantList.size());
+    public int restaurantsCount(){
+        return restaurantList.size();
     }
 }
