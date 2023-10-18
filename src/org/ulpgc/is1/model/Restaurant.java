@@ -25,6 +25,9 @@ public class Restaurant {
     public String getPhone() {
         return phone.number;
     }
+    public void validPhone(){
+        phone.isValid();
+    }
 
     public List<Menu> getMenuList() {
         return menuList;

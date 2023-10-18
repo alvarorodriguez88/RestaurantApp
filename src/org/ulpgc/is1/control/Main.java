@@ -18,8 +18,8 @@ import java.util.Arrays;
 public class Main {
     public static void init(OrderManager restaurant){
         //i
-        Address address1 = new Address("Triana", 2, 35300, "Las Palmas");
-        Address address2 = new Address("La Retama", 1, 35330, "Las Palmas");
+        Address address1 = new Address("Triana", 2, 35300, "Las Palmas de Gran Canaria.");
+        Address address2 = new Address("La Retama", 1, 35330, "Las Palmas de Gran Canaria.");
 
         Customer customer1 = new Customer("Álvaro", "Rodríguez", address1);
         Customer customer2 = new Customer("Jose", "Mataix", address2);
@@ -52,6 +52,7 @@ public class Main {
         init(orderManager);
         //iv
         Restaurant restaurant1 = orderManager.getRestaurant(0);
+        restaurant1.validPhone();
         System.out.println("El primer restaurante es " + restaurant1.getName() + " y su número de teléfono es " + restaurant1.getPhone());
         //v
         Customer customer2 = orderManager.getCustomer(1);
@@ -69,7 +70,8 @@ public class Main {
         //ix
         System.out.println("Número de clientes: " + orderManager.customersCount());
         //x
-        String listOfNames = orderManager.getOrder(0).getOrderItemArrayList();
-        System.out.println(listOfNames);
+        ArrayList<String> orderItemStringList = orderManager.getOrder(0).getOrderItemArrayList();
+        int total = orderManager.getOrder(0).price();
+        System.out.println("El pedido del primer cliente es: " + orderItemStringList + ". Costando un total de: " + total + " euros.");
     }
 }
