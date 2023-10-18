@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Order {
     private static int NEXT_ID = 0;
-    private final int id;
-    private Customer customer;
-    private Restaurant restaurant;
+    public final int id;
+    public Customer customer;
+    public Restaurant restaurant;
     public ArrayList<OrderItem> orderItems;
     public Order(Customer customer, Restaurant restaurant) {
         this.id = NEXT_ID++;
