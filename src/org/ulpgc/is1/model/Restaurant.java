@@ -13,8 +13,7 @@ public class Restaurant {
         this.name = name;
         this.phone = phone;
     }
-    public void addMenu(String name, MenuType menuType){
-        Menu menu = new Menu(name, menuType);
+    public void addMenu(Menu menu){
         menuList.add(menu);
     }
 

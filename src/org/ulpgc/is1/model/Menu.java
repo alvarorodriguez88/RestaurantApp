@@ -1,5 +1,6 @@
 package org.ulpgc.is1.model;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,5 +25,16 @@ public class Menu {
 
     public ArrayList<Dish> getDishArrayList() {
         return dishArrayList;
+    }
+    public ArrayList<String> getDish(){
+        ArrayList<String> dishString = new ArrayList<>();
+        for (Dish dish : dishArrayList){
+            String dishName = dish.getName();
+            dishString.add(dishName);
+        }
+        return dishString;
+    }
+    public String getMenuType(){
+        return menuType.toString();
     }
 }
