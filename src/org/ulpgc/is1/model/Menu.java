@@ -1,13 +1,11 @@
 package org.ulpgc.is1.model;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Menu {
-    public String name;
-    public ArrayList<Dish> dishArrayList;
-    public MenuType menuType;
+    private String name;
+    private ArrayList<Dish> dishArrayList;
+    private MenuType menuType;
 
 
     public Menu(String name, MenuType menuType) {

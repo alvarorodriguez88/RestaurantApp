@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderManager {
-    public List<Customer> customerList;
-    public List<Restaurant> restaurantList;
-    public List<Dish> dishList;
-    public List<Order> orderList;
-
+    private List<Customer> customerList;
+    private List<Restaurant> restaurantList;
+    private List<Dish> dishList;
+    private List<Order> orderList;
     public OrderManager() {
         customerList = new ArrayList<>();
         restaurantList = new ArrayList<>();
@@ -16,13 +15,16 @@ public class OrderManager {
         orderList = new ArrayList<>();
     }
 
-    public void addCustomer(Customer customer){
+    public void addCustomer(String name, String surname, Address address){
+        Customer customer = new Customer(name, surname, address);
         customerList.add(customer);
     }
-    public void addRestaurant(Restaurant restaurant){
+    public void addRestaurant(String name, Phone phone, Menu menu){
+        Restaurant restaurant = new Restaurant(name, phone, menu);
         restaurantList.add(restaurant);
     }
-    public void addDish(Dish dish){
+    public void addDish(String name, String description, int price){
+        Dish dish = new Dish(name, description, price);
         dishList.add(dish);
     }
     public void addOrder(Order order){ orderList.add(order);}

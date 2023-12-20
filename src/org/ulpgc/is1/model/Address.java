@@ -1,11 +1,11 @@
 package org.ulpgc.is1.model;
 
 public class Address {
-    public String street;
-    public int number;
-    public int postalCode;
-    public String city;
-    public Customer customer;
+    private String street;
+    private int number;
+    private int postalCode;
+    private String city;
+    private Customer customer;
 
     public Address(String street, int number, int postalCode, String city) {
         this.street = street;
@@ -28,29 +28,5 @@ public class Address {
 
     public String getCity() {
         return city;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 }

@@ -1,9 +1,9 @@
 package org.ulpgc.is1.model;
 
 public class Dish {
-    public String name;
-    public String description;
-    public int price;
+    private String name;
+    private String description;
+    private int price;
     public Dish(String name, String description, int price) {
         this.name = name;
         this.description = description;
@@ -20,17 +20,5 @@ public class Dish {
 
     public int getPrice() {
         return price;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 }
