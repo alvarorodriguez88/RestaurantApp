@@ -1,16 +1,17 @@
 package org.ulpgc.is1.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Menu {
     private String name;
-    private ArrayList<Dish> dishArrayList;
+    private List<Dish> dishArrayList;
     private MenuType menuType;
 
 
     public Menu(String name, MenuType menuType) {
         this.name = name;
-        dishArrayList = new ArrayList<>();
+        this.dishArrayList = new ArrayList<>();
         this.menuType = menuType;
     }
     public void addDish(Dish dish){
@@ -21,18 +22,4 @@ public class Menu {
         return name;
     }
 
-    public ArrayList<Dish> getDishArrayList() {
-        return dishArrayList;
-    }
-    public ArrayList<String> getDish(){
-        ArrayList<String> dishString = new ArrayList<>();
-        for (Dish dish : dishArrayList){
-            String dishName = dish.getName();
-            dishString.add(dishName);
-        }
-        return dishString;
-    }
-    public String getMenuType(){
-        return menuType.toString();
-    }
 }

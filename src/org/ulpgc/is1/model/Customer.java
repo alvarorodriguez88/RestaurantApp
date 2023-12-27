@@ -22,9 +22,6 @@ public class Customer {
     public Address getAddress() {
         return address;
     }
-    public ArrayList<Order> getCustomerOrderList() {
-        return orderList;
-    }
     public void addCustomerOrder(Order order){
         orderList.add(order);
     }
